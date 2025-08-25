@@ -18,12 +18,13 @@ import {
   Select,
   MenuItem,
   FormHelperText,
+  SelectChangeEvent,
 } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { AttachMoney, CalendarToday, Schedule } from '@mui/icons-material';
-import { addDays, format, startOfMonth, endOfMonth } from 'date-fns';
+import { addDays, format, endOfMonth } from 'date-fns';
 import { createPayPeriod } from '../../services/budget.service';
 import { PayPeriodCreate, PayFrequency } from '../../types/budget';
 import { formatCurrency } from '../../utils/formatters';
@@ -76,7 +77,7 @@ export const PaycheckInput: React.FC<PaycheckInputProps> = ({ onPayPeriodCreated
     }
   };
 
-  const handleFrequencyChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleFrequencyChange = (event: SelectChangeEvent<PayFrequency>) => {
     setFormData(prev => ({
       ...prev,
       frequency: event.target.value as PayFrequency,
