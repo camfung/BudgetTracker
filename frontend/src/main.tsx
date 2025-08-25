@@ -6,6 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { registerSW } from './utils/pwa';
+import { logConfig } from './utils/config';
 
 const rootElement = document.getElementById('root');
 
@@ -20,6 +21,9 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// Log configuration in development
+logConfig();
 
 // Register service worker for PWA functionality
 registerSW();

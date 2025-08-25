@@ -2,7 +2,7 @@
  * Application constants.
  */
 
-export const APP_NAME = 'Biweekly Budget App';
+export const APP_NAME = import.meta.env.VITE_APP_NAME || 'GeminiPay Budget App';
 
 export const ROUTES = {
   HOME: '/',

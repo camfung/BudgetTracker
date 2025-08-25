@@ -9,7 +9,7 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'https://api.budget.camfung.dev',
+        target: 'http://localhost:8000',
         changeOrigin: true,
         secure: false,
       }
