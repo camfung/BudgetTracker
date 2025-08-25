@@ -9,9 +9,7 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: process.env.NODE_ENV === 'production'
-          ? 'https://api.budget.camfung.dev'
-          : 'http://localhost:8000',
+        target: 'http://localhost:8000',
         changeOrigin: true,
         secure: false,
       }
